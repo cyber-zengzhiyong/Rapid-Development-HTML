@@ -1,1 +1,166 @@
-
+<!DOCTYPE html><!--html文件标准的文件头，每个HTML文件必备-->
+<html lang="zh-CN"><!--html文件的语言属性，zh-TW表示繁体中文（台湾） zh-HK表示繁体中文（香港） en-US表示美式英语 en-GB表示英式英语-->
+<head>
+    <meta charset="UTF-8"><!--UTF-8表示Unicode字符集的一种可变长度字符编码，支持全球几乎所有字符，是目前网页的主流字符集-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--将网页宽度调整为设备的实际屏幕宽度，并以1:1的比例（不缩放）显示内容-->
+    <title>HTML学习示例</title>
+</head>
+<body>
+    <header><!--<header>元素定义了文档或节的页眉，通常包含网站Logo、导航菜单等-->
+        <h1>HTML基础学习</h1><!--<h1>、<h2>、<h3> - 标题标签，h1级别最高，h6级别最低-->
+        <nav><!--导航链接的容器，用于网站的主导航-->
+            <ul><!--<ul>无序列表，列表项前显示项目符号-->
+                <li><a href="#text">文本元素</a></li><!--<li>列表项，包含在ul或ol标签内-->
+                <li><a href="#list">列表元素</a></li><!--<a> - 锚点链接，用于创建页面内或页面间的链接-->
+                <li><a href="#table">表格元素</a></li>
+                <li><a href="#form">表单元素</a></li>
+                <li><a href="#media">多媒体元素</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main><!--<main>元素定义了文档或节的主要内容区域，通常包含页面的主要信息或功能-->
+        <section id="text"><!--<section> 页面中的一个独立区块，用于组织相关内容-->
+            <h2>文本元素</h2>
+            <p>这是一个<span>段落</span>，可以包含<strong>加粗</strong>和<em>斜体</em>文本。</p><!--span行内文本容器，用于对部分文本进行样式或结构处理,strong定义重要文本，通常显示为粗体,em定义强调文本，通常显示为斜体-->
+            <blockquote>这是一段引用文本，用于展示他人的观点或重要内容。</blockquote><!--<blockquote> 引用文本容器，用于引用其他来源的内容，通常会缩进显示-->
+            <pre><code>function hello() {<!--pre预格式化文本，保留空格和换行符;code定义计算机代码，通常使用等宽字体显示-->
+    console.log("Hello, World!");
+}</code></pre>
+            <hr><!--<hr> - 水平线标签，用于分隔内容-->
+        </section>
+        <section id="list">
+            <h2>列表元素</h2>
+            <h3>无序列表</h3>
+            <ul><!--<ul>无序列表，列表项前显示项目符号-->
+                <li>第一项</li><!--<li>列表项，包含在ul或ol标签内-->
+                <li>第二项</li>
+                <li>第三项</li>
+            </ul>
+            <h3>有序列表</h3>
+            <ol><!--<ol>有序列表，列表项前显示数字或字母-->
+                <li>第一步</li>
+                <li>第二步</li>
+                <li>第三步</li>
+            </ol>
+            <h3>定义列表</h3>
+            <dl><!--<dl>定义列表，包含多个定义项-->
+                <dt>HTML</dt><!--<dt>定义列表项的标题，通常用于定义名词或术语-->
+                <dd>超文本标记语言</dd><!--<dd>定义列表项的描述，通常用于解释或定义dt元素-->
+                <dt>CSS</dt>
+                <dd>层叠样式表</dd>
+                <dt>JavaScript</dt>
+                <dd>脚本编程语言</dd>
+            </dl>
+        </section>
+        <section id="table">
+            <h2>表格元素</h2>
+            <table border="1"><!--table表格容器，用于创建表格-->
+                <thead><!--<thead>表格的表头部分，包含表格的列标题-->
+                    <tr>
+                        <th>姓名</th><!--<th>表格列标题，包含在thead标签内,通常显示为粗体居中-->
+                        <th>年龄</th>
+                        <th>职业</th>
+                    </tr>
+                </thead>
+                <tbody><!--<tbody>表格的主体部分，包含表格的行数据-->
+                    <tr><!--<tr>表格行，包含在tbody或thead标签内-->
+                        <td>张三</td><!--<td>表格单元格，包含在tr标签内,表示表格数据-->
+                        <td>25</td>
+                        <td>工程师</td>
+                    </tr>
+                    <tr>
+                        <td>李四</td>
+                        <td>30</td>
+                        <td>设计师</td>
+                    </tr>
+                    <tr>
+                        <td>王五</td>
+                        <td>28</td>
+                        <td>教师</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="form">
+            <h2>表单元素</h2>
+            <form action="#" method="post"><!--form表单容器，用于收集用户输入-->
+                <div><!--<div>块级容器，用于组织和布局其他元素-->
+                    <label for="name">姓名：</label><!--label表单元素的标签，提升可访问性-->
+                    <input type="text" id="name" name="name" required><!--input表单元素，用于收集用户输入,根据type属性有不同类型,type="text"文本输入框-->
+                </div>
+                <div>
+                    <label for="email">邮箱：</label>
+                    <input type="email" id="email" name="email" required><!--type="email" - 邮箱输入框，会进行格式验证-->
+                </div>
+                <div>
+                    <label for="age">年龄：</label>
+                    <input type="number" id="age" name="age" min="1" max="120"><!--type="number" - 数字输入框，可设置min/max限制-->
+                </div>
+                <div>
+                    <label>性别：</label>
+                    <input type="radio" id="male" name="gender" value="male"><!--type="radio" - 单选按钮，同一name属性的选项互斥-->
+                    <label for="male">男</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">女</label>
+                </div>
+                <div>
+                    <label>兴趣爱好：</label>
+                    <input type="checkbox" id="reading" name="hobby" value="reading"><!--type="checkbox" - 复选框，用户可以选择多个选项-->
+                    <label for="reading">阅读</label>
+                    <input type="checkbox" id="sports" name="hobby" value="sports">
+                    <label for="sports">运动</label>
+                    <input type="checkbox" id="music" name="hobby" value="music">
+                    <label for="music">音乐</label>
+                </div>
+                <div>
+                    <label for="education">学历：</label>
+                    <select id="education" name="education"><!--<select> -下拉选择框-->
+                        <option value="">请选择</option><!--<option> - 下拉选择框中的选项-->
+                        <option value="high">高中</option>
+                        <option value="college">大专</option>
+                        <option value="bachelor">本科</option>
+                        <option value="master">硕士</option>
+                        <option value="doctor">博士</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message">留言：</label>
+                    <textarea id="message" name="message" rows="4" cols="50"></textarea><!--<textarea> - 多行文本输入框，用于收集长文本输入-->
+                </div>
+                <div>
+                    <input type="submit" value="提交"><!--type="submit" - 提交按钮，用于提交表单数据-->
+                    <input type="reset" value="重置"><!--type="reset" - 重置按钮，用于重置表单数据-->
+                    <button type="button">普通按钮</button><!--type="button" - 普通按钮，点击后触发JavaScript事件-->
+                </div>
+            </form>
+        </section>
+        <section id="media">
+            <h2>多媒体元素</h2>
+            <figure><!--<figure> - 独立的内容容器，通常包含图片、图表等-->
+                <img src="2.png" alt="示例图片" width="1600" height="200"><!--img - 图片元素，用于嵌入图片-->
+                <figcaption>图片说明</figcaption><!--<figcaption> - 为figure元素提供说明文字-->
+            </figure>
+            <h3>音频示例</h3>
+            <audio controls><!--<audio> - 音频播放器，用于嵌入音频内容-->
+                <source src="audio.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素。
+            </audio>
+            <h3>视频示例</h3>
+            <video width="400" height="300" controls><!--<video> - 视频元素，用于播放音频或视频-->
+                <source src="video.mp4" type="video/mp4"><!--<source>为音频或视频提供媒体源-->
+                您的浏览器不支持视频元素。
+            </video>
+        </section>
+    </main>
+    <aside><!--<aside> - 侧边栏区域，包含与主要内容相关的辅助信息-->
+        <h3>相关链接</h3>
+        <ul>
+            <li><a href="https://www.runoob.com/html/html-tutorial.html" target="_blank">菜鸟教程 HTML文档</a></li>
+            <li><a href="https://www.w3school.com.cn/html/" target="_blank">W3School HTML教程</a></li>
+        </ul>
+    </aside>
+    <footer><!--<footer> - 页面的底部区域，通常包含版权信息、联系方式等-->
+        <p>&copy; 2023 HTML学习示例</p>
+    </footer>
+</body>
+</html>
